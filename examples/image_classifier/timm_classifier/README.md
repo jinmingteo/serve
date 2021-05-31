@@ -20,11 +20,11 @@ Example: resnet50.pt
   torch-model-archiver --model-name resnet50 --version 1.0  --serialized-file resnet_best.pt --extra-files examples/image_classifier/timm_classifier/index_to_name.json --handler image_classifier
 
 
-  torchserve --start --model-store model-store/ --models resnet50=resnet50.mar
+  torchserve --start --model-store model-store/ --models classification=resnet18.mar
 
   ```
 
   - Test your API
   ```
-  curl http://127.0.0.1:8080/predictions/resnet50 -T examples/image_classifier/kitten.jpg
+  curl http://127.0.0.1:8080/predictions/classification -T examples/image_classifier/kitten.jpg
   ```
